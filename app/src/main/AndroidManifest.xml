@@ -26,6 +26,14 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity
+            android:name=".DaySchedule"
+            android:label="@string/title_activity_day_schedule" >
+        </activity>
+        <activity
+            android:name=".FoodActivity"
+            android:label="@string/title_activity_food" >
+        </activity>
     </application>
 
 </manifest>
