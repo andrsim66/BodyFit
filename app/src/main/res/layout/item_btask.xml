@@ -1,24 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<!-- Layout for weather forecast list item for future day (not today) -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
-              android:layout_height="wrap_content"
+              android:layout_height="72dp"
               android:gravity="center_vertical"
-              android:minHeight="?android:attr/listPreferredItemHeight"
               android:orientation="horizontal"
-        >
+              android:minHeight="?android:attr/listPreferredItemHeight">
 
     <FrameLayout
             android:layout_width="60dp"
             android:layout_height="wrap_content">
-
         <ImageView
                 android:id="@+id/iv_btask_item_icon"
+                android:src="@drawable/ic_water"
                 android:layout_gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                />
     </FrameLayout>
 
     <LinearLayout
@@ -31,15 +29,17 @@
                 android:id="@+id/tv_btask_item_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-condensed"
-                android:textSize="20sp"/>
-
+                android:text="Title"
+                android:textSize="16sp"
+                android:layout_marginBottom="4dp"
+                />
         <TextView
                 android:id="@+id/tv_btask_item_amount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-condensed"
-                android:textAppearance="?android:textAppearanceSmall"/>
+                android:text="amount"
+                android:layout_marginTop="4dp"
+                />
     </LinearLayout>
 
     <LinearLayout
@@ -47,22 +47,23 @@
             android:layout_height="wrap_content"
             android:layout_weight="5"
             android:layout_gravity="center"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            >
 
         <TextView
                 android:id="@+id/tv_btask_item_start"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:fontFamily="sans-serif-condensed"
-                android:textAppearance="?android:textAppearanceLarge"/>
-
+                android:text="08:30"
+                android:textSize="16sp"
+                />
         <TextView
                 android:id="@+id/tv_btask_item_finish"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:fontFamily="sans-serif-condensed"
-                android:textAppearance="?android:textAppearanceSmall"/>
+                android:text="08:30"
+                />
     </LinearLayout>
 </LinearLayout>

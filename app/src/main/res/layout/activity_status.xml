@@ -273,5 +273,6 @@
             android:text="Start"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
-            android:layout_below="@+id/tv_message"/>
+            android:layout_below="@+id/tv_message"
+            android:id="@+id/b_start"/>
 </RelativeLayout>
