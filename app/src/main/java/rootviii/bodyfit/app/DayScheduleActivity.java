@@ -10,10 +10,9 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import rootviii.bodyfit.app.pojo.BTask;
 
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 
 public class DayScheduleActivity extends ActionBarActivity {

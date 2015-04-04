@@ -27,7 +27,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".DaySchedule"
+            android:name=".DayScheduleActivity"
             android:label="@string/title_activity_day_schedule" >
         </activity>
         <activity
