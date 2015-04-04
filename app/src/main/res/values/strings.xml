@@ -16,5 +16,7 @@
     <string name="musclesPers">Muscles percentage</string>
     <string name="waterPers">Water percentage</string>
     <string name="start">Start</string>
+    <string name="title_activity_day_schedule">DaySchedule</string>
+    <string name="title_activity_food">FoodActivity</string>
 
 </resources>
