@@ -18,6 +18,8 @@ public class Person {
     private double musclesPers;
     private double waterPers;
 
+    public Person(){}
+
     public Person(String id, double height, double weight, double dWeight,
                   int age, int gender, double neckCF, double loinsCF, double waistLine,
                   double fatPers, double musclesPers, double waterPers) {

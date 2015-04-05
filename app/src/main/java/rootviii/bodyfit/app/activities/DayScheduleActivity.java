@@ -3,6 +3,7 @@ package rootviii.bodyfit.app.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -22,11 +23,17 @@ public class DayScheduleActivity extends ActionBarActivity implements AdapterVie
     private ListView mLvBTasks;
     private List<BTask> mBTasks;
     private DayScheduleAdapter adapter;
+    private Toolbar mToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_day_schedule);
+
+        mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        if (mToolbar != null) {
+            setSupportActionBar(mToolbar);
+        }
 
         mBTasks = new ArrayList<>();
 
