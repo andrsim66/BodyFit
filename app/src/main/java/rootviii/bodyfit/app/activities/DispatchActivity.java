@@ -13,14 +13,14 @@ public class DispatchActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if (Utils.restoreLoginState(DispatchActivity.this)) {
+//        if (Utils.restoreLoginState(DispatchActivity.this)) {
             Intent intent = new Intent(DispatchActivity.this, DayScheduleActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
-        } else {
-            Intent intent = new Intent(DispatchActivity.this, PersonActivity.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivity(intent);
-        }
+//        } else {
+//            Intent intent = new Intent(DispatchActivity.this, PersonActivity.class);
+//            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+//            startActivity(intent);
+//        }
     }
 }

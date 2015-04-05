@@ -20,5 +20,9 @@
     <string name="title_activity_food">FoodActivity</string>
     <string name="title_activity_statistics">StatisticsActivity</string>
     <string name="hello_world">Hello world!</string>
+    <string name="calories">Calories</string>
+    <string name="caloriesTab">Calories</string>
+    <string name="weightTab">Weight</string>
+    <string name="waterTab">Water</string>
 
 </resources>
