@@ -9,13 +9,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseQuery;
 import rootviii.bodyfit.app.R;
 import rootviii.bodyfit.app.adapters.DayScheduleAdapter;
 import rootviii.bodyfit.app.pojo.BTask;
-import rootviii.bodyfit.app.utils.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +27,7 @@ public class DayScheduleActivity extends ActionBarActivity implements AdapterVie
     private List<BTask> mBTasks;
     private DayScheduleAdapter adapter;
     private Toolbar mToolbar;
+    private ProgressBar progressBar;
 
     private double category;
 
@@ -50,6 +51,7 @@ public class DayScheduleActivity extends ActionBarActivity implements AdapterVie
 
     private void initViews() {
         mLvBTasks = (ListView) findViewById(R.id.listView);
+        progressBar = (ProgressBar) findViewById(R.id.progressBar);
     }
 
     private void setupViews() {
@@ -57,8 +59,11 @@ public class DayScheduleActivity extends ActionBarActivity implements AdapterVie
     }
 
     private void loadTasks() {
+        progressBar.setVisibility(View.VISIBLE);
         Intent intent = getIntent();
         category = intent.getIntExtra("category", 0);
+        // todo count subcategory
+        category = 1.2;
         ParseQuery<BTask> query = new ParseQuery<>("BTask");
         query.whereGreaterThan("category", category);
         query.orderByAscending("startTime");
@@ -66,6 +71,7 @@ public class DayScheduleActivity extends ActionBarActivity implements AdapterVie
             @Override
             public void done(List<BTask> list, ParseException e) {
                 if (e == null) {
+                    progressBar.setVisibility(View.GONE);
                     mBTasks = new ArrayList<>(list);
                     adapter = new DayScheduleAdapter(DayScheduleActivity.this,
                             R.layout.item_btask, mBTasks);

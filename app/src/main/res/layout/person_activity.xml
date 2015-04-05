@@ -24,7 +24,7 @@
                         android:layout_margin="16dp"
                         android:layout_alignParentLeft="true"
                         android:layout_centerVertical="true"
-                        android:src="@drawable/ic_muscle"
+                        android:src="@drawable/ic_height"
                         android:id="@+id/iv_height_label"
                         />
                 <EditText
@@ -51,7 +51,7 @@
                         android:layout_margin="16dp"
                         android:layout_alignParentLeft="true"
                         android:layout_centerVertical="true"
-                        android:src="@drawable/ic_muscle"
+                        android:src="@drawable/ic_weight"
                         android:id="@+id/iv_weight_label"
                         />
                 <EditText
@@ -78,7 +78,6 @@
                         android:layout_margin="16dp"
                         android:layout_alignParentLeft="true"
                         android:layout_centerVertical="true"
-                        android:src="@drawable/ic_muscle"
                         android:id="@+id/iv_dweight_label"
                         />
                 <EditText
@@ -104,7 +103,7 @@
                         android:layout_margin="16dp"
                         android:layout_alignParentLeft="true"
                         android:layout_centerVertical="true"
-                        android:src="@drawable/ic_muscle"
+                        android:src="@drawable/ic_age"
                         android:id="@+id/iv_age_label"
                         />
                 <EditText
@@ -163,7 +162,7 @@
                         android:layout_margin="16dp"
                         android:layout_alignParentLeft="true"
                         android:layout_centerVertical="true"
-                        android:src="@drawable/ic_muscle"
+                        android:src="@drawable/ic_neck"
                         android:id="@+id/iv_neckCF_label"
                         />
                 <EditText
@@ -189,7 +188,7 @@
                         android:layout_margin="16dp"
                         android:layout_alignParentLeft="true"
                         android:layout_centerVertical="true"
-                        android:src="@drawable/ic_muscle"
+                        android:src="@drawable/ic_waist"
                         android:id="@+id/iv_waistLineCF_label"
                         />
 
@@ -218,7 +217,7 @@
                         android:layout_margin="16dp"
                         android:layout_alignParentLeft="true"
                         android:layout_centerVertical="true"
-                        android:src="@drawable/ic_muscle"
+                        android:src="@drawable/ic_hips"
                         android:id="@+id/iv_loinsCF_label"
                         />
                 <EditText

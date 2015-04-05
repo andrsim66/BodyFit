@@ -6,16 +6,13 @@ import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import com.parse.ParseException;
 import com.parse.SaveCallback;
 import rootviii.bodyfit.app.R;
 import rootviii.bodyfit.app.pojo.Person;
-import rootviii.bodyfit.app.utils.Logger;
 import rootviii.bodyfit.app.utils.Utils;
-
-import java.util.Calendar;
-import java.util.Date;
 
 /**
  * Created by andrii on 04.04.15.
@@ -27,6 +24,7 @@ public class StatusActivity extends ActionBarActivity implements View.OnClickLis
     private TextView tvFatP;
     private TextView tvMuscleP;
     private TextView tvWaterP;
+    private ImageView ivOutline;
 
     private Person person;
 
@@ -61,6 +59,7 @@ public class StatusActivity extends ActionBarActivity implements View.OnClickLis
         tvFatP = (TextView) findViewById(R.id.tv_fat_percentage);
         tvMuscleP = (TextView) findViewById(R.id.tv_muscle_percentage);
         tvWaterP = (TextView) findViewById(R.id.tv_water_percentage);
+        ivOutline = (ImageView) findViewById(R.id.iv_outline);
     }
 
     private void setupViews() {
@@ -76,6 +75,11 @@ public class StatusActivity extends ActionBarActivity implements View.OnClickLis
                 person.getWaistLine(),
                 person.getLoinsCF(),
                 person.getGender());
+        if (person.getGender() == 0) {
+            ivOutline.setImageDrawable(getResources().getDrawable(R.drawable.ic_male_outline));
+        } else {
+            ivOutline.setImageDrawable(getResources().getDrawable(R.drawable.ic_female_outline));
+        }
         tvFatP.setText(Utils.formatPercent(fatPercent));
         double musclePercent = Utils.calcMuscle(person.getWeight(), fatPercent);
         tvMuscleP.setText(Utils.formatPercent(musclePercent));
