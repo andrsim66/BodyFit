@@ -18,7 +18,7 @@
             <ImageView
                     android:layout_width="32dp"
                     android:layout_height="32dp"
-                    android:src="@drawable/ic_weight"
+                    android:src="@drawable/ic_fat_man"
                     android:id="@+id/iv_fat"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="16dp"
@@ -124,10 +124,12 @@
     <ImageView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:src="@drawable/ic_body"
+            android:src="@drawable/ic_male_outline"
             android:layout_centerHorizontal="true"
             android:layout_below="@id/lv_container"
-            android:layout_above="@+id/tv_message"/>
+            android:layout_above="@+id/tv_message"
+            android:id="@+id/iv_outline"
+            />
 
     <TextView
             android:layout_width="wrap_content"
