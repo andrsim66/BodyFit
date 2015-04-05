@@ -4,6 +4,8 @@ import android.app.Application;
 import android.content.Context;
 import com.parse.Parse;
 import com.parse.ParseObject;
+import rootviii.bodyfit.app.pojo.BTask;
+import rootviii.bodyfit.app.pojo.Person;
 
 /**
  * Created by andrii on 05.04.15.
@@ -19,8 +21,9 @@ public class App extends Application {
         super.onCreate();
         app = this;
         this.setAppContext(getApplicationContext());
-//        ParseObject.registerSubclass(ChequeDebt.class);
-        Parse.initialize(this, "2pmagJ0Wq1qGCzRB6ISL9bG6ph2t2yisE7L92i2e", "EfFtWHNKwaPKMFPq56hiwZYElxcaCjxuuo6jfC67");
+        ParseObject.registerSubclass(Person.class);
+        ParseObject.registerSubclass(BTask.class);
+        Parse.initialize(this, "H9mWYRjwu8K5XDLUM3JvbxSq1TUq7V7IXgWeDAoE", "Nvctka9k8YaURG5V64RAbrd085wGbZYjzUCo7qF1");
     }
 
     public static App getInstance() {

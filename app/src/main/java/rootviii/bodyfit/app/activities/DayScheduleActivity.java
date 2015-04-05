@@ -9,12 +9,15 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import com.parse.FindCallback;
+import com.parse.ParseException;
+import com.parse.ParseQuery;
 import rootviii.bodyfit.app.R;
 import rootviii.bodyfit.app.adapters.DayScheduleAdapter;
 import rootviii.bodyfit.app.pojo.BTask;
+import rootviii.bodyfit.app.utils.Logger;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 
@@ -24,6 +27,8 @@ public class DayScheduleActivity extends ActionBarActivity implements AdapterVie
     private List<BTask> mBTasks;
     private DayScheduleAdapter adapter;
     private Toolbar mToolbar;
+
+    private double category;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,34 +42,10 @@ public class DayScheduleActivity extends ActionBarActivity implements AdapterVie
 
         mBTasks = new ArrayList<>();
 
-        BTask bTask0 = new BTask(0, new Date(), new Date(), 0, false);
-        BTask bTask1 = new BTask(2, new Date(), new Date(), 250, false);
-        BTask bTask2 = new BTask(3, new Date(), new Date(), 0, false);
-        BTask bTask3 = new BTask(1, new Date(), new Date(), 0, false);
-        BTask bTask4 = new BTask(2, new Date(), new Date(), 250, false);
-        BTask bTask5 = new BTask(1, new Date(), new Date(), 0, false);
-        BTask bTask6 = new BTask(2, new Date(), new Date(), 250, false);
-        BTask bTask7 = new BTask(1, new Date(), new Date(), 0, false);
-        BTask bTask8 = new BTask(3, new Date(), new Date(), 0, false);
-        BTask bTask9 = new BTask(2, new Date(), new Date(), 250, false);
-        BTask bTask10 = new BTask(1, new Date(), new Date(), 0, false);
-        BTask bTask11 = new BTask(4, new Date(), new Date(), 0, false);
-
-        mBTasks.add(bTask0);
-        mBTasks.add(bTask1);
-        mBTasks.add(bTask2);
-        mBTasks.add(bTask3);
-        mBTasks.add(bTask4);
-        mBTasks.add(bTask5);
-        mBTasks.add(bTask6);
-        mBTasks.add(bTask7);
-        mBTasks.add(bTask8);
-        mBTasks.add(bTask9);
-        mBTasks.add(bTask10);
-        mBTasks.add(bTask11);
-
         initViews();
         setupViews();
+
+        loadTasks();
     }
 
     private void initViews() {
@@ -72,9 +53,26 @@ public class DayScheduleActivity extends ActionBarActivity implements AdapterVie
     }
 
     private void setupViews() {
-        adapter = new DayScheduleAdapter(DayScheduleActivity.this, R.layout.item_btask, mBTasks);
-        mLvBTasks.setAdapter(adapter);
         mLvBTasks.setOnItemClickListener(this);
+    }
+
+    private void loadTasks() {
+        Intent intent = getIntent();
+        category = intent.getIntExtra("category", 0);
+        ParseQuery<BTask> query = new ParseQuery<>("BTask");
+        query.whereGreaterThan("category", category);
+        query.orderByAscending("startTime");
+        query.findInBackground(new FindCallback<BTask>() {
+            @Override
+            public void done(List<BTask> list, ParseException e) {
+                if (e == null) {
+                    mBTasks = new ArrayList<>(list);
+                    adapter = new DayScheduleAdapter(DayScheduleActivity.this,
+                            R.layout.item_btask, mBTasks);
+                    mLvBTasks.setAdapter(adapter);
+                }
+            }
+        });
     }
 
     @Override

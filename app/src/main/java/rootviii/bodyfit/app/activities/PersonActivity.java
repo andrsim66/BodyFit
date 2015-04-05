@@ -9,7 +9,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
-import com.google.gson.Gson;
 import rootviii.bodyfit.app.R;
 import rootviii.bodyfit.app.pojo.Person;
 
@@ -74,11 +73,16 @@ public class PersonActivity extends ActionBarActivity implements View.OnClickLis
             case R.id.startButton:
                 if (validate()) {
                     Person person = makePerson();
-                    Gson gsonPerson = new Gson();
-                    String jsonPerson = gsonPerson.toJson(person);
                     Intent intent = new Intent(PersonActivity.this, StatusActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-                    intent.putExtra("person", jsonPerson);
+                    intent.putExtra("height", person.getHeight());
+                    intent.putExtra("weight", person.getWeight());
+                    intent.putExtra("dweight", person.getdWeight());
+                    intent.putExtra("age", person.getAge());
+                    intent.putExtra("gender", person.getGender());
+                    intent.putExtra("neck", person.getNeckCF());
+                    intent.putExtra("waist", person.getWaistLine());
+                    intent.putExtra("loins", person.getLoinsCF());
                     startActivity(intent);
                 }
                 break;

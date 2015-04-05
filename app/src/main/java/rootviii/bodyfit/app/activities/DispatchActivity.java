@@ -20,6 +20,7 @@ public class DispatchActivity extends ActionBarActivity {
         } else {
             Intent intent = new Intent(DispatchActivity.this, PersonActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.putExtra("category", Utils.restoreCategory(DispatchActivity.this));
             startActivity(intent);
         }
     }
