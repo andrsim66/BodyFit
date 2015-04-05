@@ -27,6 +27,18 @@ public class Utils {
         return prefs.getBoolean("firstLogin", false);
     }
 
+    public static void saveCategory(Context context, int category) {
+        SharedPreferences prefs = context.getSharedPreferences("categoryPrefs", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putInt("category", category);
+        editor.commit();
+    }
+
+    public static int restoreCategory(Context context) {
+        SharedPreferences prefs = context.getSharedPreferences("categoryPrefs", Context.MODE_PRIVATE);
+        return prefs.getInt("category", 0);
+    }
+
     public static String getTaskName(int type) {
         switch (type) {
             case 0:
@@ -120,4 +132,23 @@ public class Utils {
                 return -1;
         }
     }
+
+    public static int getProgramCategory(double fatPercent, int gender) {
+        if (gender == 0) {
+            if (fatPercent < 22 && fatPercent > 12) {
+                return 0;
+            } else if (fatPercent >= 22) {
+                return 2;
+            }
+        } else {
+            if (fatPercent < 26 && fatPercent > 16) {
+                return 1;
+            } else if (fatPercent >= 26) {
+                return 3;
+            }
+        }
+        return -1;
+    }
+
+
 }

@@ -145,6 +145,7 @@
             android:layout_height="48dp"
             android:background="@drawable/button_green"
             android:text="Start"
+            android:textColor="@color/white"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:layout_marginBottom="16dp"

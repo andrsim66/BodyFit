@@ -240,7 +240,8 @@
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="16dp"
                     android:layout_marginBottom="16dp"
-                    android:text="@string/start"
+                    android:text="Next"
+                    android:textColor="@color/white"
                     android:id="@+id/startButton"/>
         </LinearLayout>
     </ScrollView>

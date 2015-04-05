@@ -1,135 +1,99 @@
 package rootviii.bodyfit.app.pojo;
 
+import com.parse.ParseClassName;
+import com.parse.ParseObject;
+
 /**
  * Created by voronsky on 4/4/2015.
  */
-public class Person {
-
-    private String id;
-    private double height;
-    private double weight;
-    private double dWeight;
-    private int age;
-    private int gender;
-    private double neckCF;
-    private double waistLine;
-    private double loinsCF;
-    private double fatPers;
-    private double musclesPers;
-    private double waterPers;
-
-    public Person(){}
-
-    public Person(String id, double height, double weight, double dWeight,
-                  int age, int gender, double neckCF, double loinsCF, double waistLine,
-                  double fatPers, double musclesPers, double waterPers) {
-        this.id = id;
-        this.height = height;
-        this.weight = weight;
-        this.dWeight = dWeight;
-        this.age = age;
-        this.gender = gender;
-        this.neckCF = neckCF;
-        this.loinsCF = loinsCF;
-        this.waistLine = waistLine;
-        this.fatPers = fatPers;
-        this.musclesPers = musclesPers;
-        this.waterPers = waterPers;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
+@ParseClassName("Person")
+public class Person extends ParseObject {
 
     public double getHeight() {
-        return height;
+        return getDouble("height");
     }
 
     public void setHeight(double height) {
-        this.height = height;
+        put("height", height);
     }
 
     public double getWeight() {
-        return weight;
+        return getDouble("weight");
     }
 
     public void setWeight(double weight) {
-        this.weight = weight;
+        put("weight", weight);
     }
 
     public double getdWeight() {
-        return dWeight;
+        return getDouble("dweight");
     }
 
     public void setdWeight(double dWeight) {
-        this.dWeight = dWeight;
+        put("dweight", dWeight);
     }
 
     public int getAge() {
-        return age;
+        return getInt("age");
     }
 
     public void setAge(int age) {
-        this.age = age;
+        put("age", age);
     }
 
     public int getGender() {
-        return gender;
+        return getInt("gender");
     }
 
     public void setGender(int gender) {
-        this.gender = gender;
+        put("gender", gender);
     }
 
     public double getNeckCF() {
-        return neckCF;
+        return getDouble("neckCF");
     }
 
     public void setNeckCF(double neckCF) {
-        this.neckCF = neckCF;
+        put("neckCF", neckCF);
     }
 
     public double getWaistLine() {
-        return waistLine;
+        return getDouble("waistline");
     }
 
     public void setWaistLine(double waistLine) {
-        this.waistLine = waistLine;
+        put("waistline", waistLine);
     }
 
     public double getLoinsCF() {
-        return loinsCF;
+        return getDouble("loinsCF");
     }
 
     public void setLoinsCF(double loinsCF) {
-        this.loinsCF = loinsCF;
+        put("loinsCF", loinsCF);
     }
 
-    public double getFatPers() {
-        return fatPers;
+    public double getFatPercent() {
+        return getDouble("fatPercent");
     }
 
-    public void setFatPers(double fatPers) {
-        this.fatPers = fatPers;
+    public void setFatPercent(double fatPercent) {
+        this.put("fatPercent", fatPercent);
     }
 
-    public double getMusclesPers() {
-        return musclesPers;
+    public double getMusclePercent() {
+        return getDouble("musclePercent");
     }
 
-    public void setMusclesPers(double musclesPers) {
-        this.musclesPers = musclesPers;
+    public void setMusclePercent(double musclePercent) {
+        put("musclePercent", musclePercent);
     }
 
-    public double getWaterPers() {
-        return waterPers;
+    public double getWaterPercent() {
+        return getDouble("waterPercent");
     }
 
-    public void setWaterPers(double waterPers) {
-        this.waterPers = waterPers;
+    public void setWaterPercent(double waterPercent) {
+        put("waterPercent", waterPercent);
     }
 }
