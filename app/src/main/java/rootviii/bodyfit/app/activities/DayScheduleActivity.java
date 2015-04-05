@@ -87,8 +87,8 @@ public class DayScheduleActivity extends ActionBarActivity implements AdapterVie
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_statistics) {
+            startActivity(new Intent(DayScheduleActivity.this, StatisticsActivity.class));
             return true;
         }
 

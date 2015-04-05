@@ -18,5 +18,7 @@
     <string name="start">Start</string>
     <string name="title_activity_day_schedule">DaySchedule</string>
     <string name="title_activity_food">FoodActivity</string>
+    <string name="title_activity_statistics">StatisticsActivity</string>
+    <string name="hello_world">Hello world!</string>
 
 </resources>
