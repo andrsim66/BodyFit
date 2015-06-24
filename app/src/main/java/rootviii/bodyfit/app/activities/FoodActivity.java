@@ -19,6 +19,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.ArrayAdapter;
+import android.widget.SimpleAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,7 +41,8 @@ public class FoodActivity extends ActionBarActivity implements OnClickListener  
     ArrayList<String> kindlist, product_in_list;
     ArrayList<Integer> countlist;
     String kind, count;
-    ArrayAdapter adapter1, adapter2;
+    ArrayAdapter adapter1;
+            ProductAdapter adapter2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,7 +74,8 @@ public class FoodActivity extends ActionBarActivity implements OnClickListener  
         adapter1 = new ArrayAdapter(this,
                 android.R.layout.simple_list_item_1, kindlist );
 
-        adapter2 = new ArrayAdapter(this, android.R.layout.simple_list_item_1, product_in_list);
+//        adapter2 = new SimpleAdapter(this, android.R.layout.two_line_list_item, product_in_list, countlist);
+        adapter2 = new ProductAdapter(this, product_in_list, countlist);
         etKind.setAdapter(adapter1);
         listProduct.setAdapter(adapter2);
 
@@ -110,9 +113,9 @@ public class FoodActivity extends ActionBarActivity implements OnClickListener  
         {
             case R.id.addButton:
                 kind = etKind.getText().toString();
-                //count = etCount.getText().toString();
+                count = etCount.getText().toString();
                 product_in_list.add(kind);
-                //countlist.add(Integer.parseInt(count));
+                countlist.add(Integer.parseInt(count));
                 etKind.setText("");
                 etCount.setText("");
                 //countlist.add(Integer.parseInt(count));

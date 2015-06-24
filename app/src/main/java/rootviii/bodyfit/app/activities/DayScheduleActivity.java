@@ -75,9 +75,6 @@ public class DayScheduleActivity extends ActionBarActivity implements AdapterVie
                 if (e == null) {
                     progressBar.setVisibility(View.GONE);
                     mBTasks = new ArrayList<>(list.subList(0,12));
-                    for (int i = 0; i < mBTasks.size(); i++) {
-                        Logger.d("bt="+mBTasks.get(i).getType());
-                    }
                     mBTasks.get(0).setType(0);
                     adapter = new DayScheduleAdapter(DayScheduleActivity.this,
                             R.layout.item_btask, mBTasks);
