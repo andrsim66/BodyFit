@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:minHeight="?android:attr/listPreferredItemHeight">
+
+        <FrameLayout
+            android:layout_width="60dp"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/iv_food_item_icon"
+                android:src="@drawable/ic_meal"
+                android:layout_gravity="center"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginLeft="10sp"
+                />
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="7"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <TextView
+                android:id="@+id/tv_food_item_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Title"
+                android:textSize="16sp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="10sp"
+                />
+            <TextView
+                android:id="@+id/tv_food_item_connt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50sp"
+                android:text="Title"
+                android:textSize="16sp"
+                android:layout_marginBottom="4dp"
+                android:layout_weight="0.31" />
+        </LinearLayout>
+
+    </LinearLayout>
+

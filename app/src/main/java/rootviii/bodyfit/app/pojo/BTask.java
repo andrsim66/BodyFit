@@ -11,6 +11,8 @@ import java.util.Date;
 @ParseClassName("BTask")
 public class BTask extends ParseObject {
 
+
+
     public int getType() {
         return getInt("type");
     }

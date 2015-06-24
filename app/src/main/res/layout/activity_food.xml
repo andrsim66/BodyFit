@@ -1,8 +1,110 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 tools:context="rootviii.bodyfit.app.activities.FoodActivity">
 
-    <include layout="@layout/toolbar"/>
+   <include layout="@layout/toolbar"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Kind of food"
+        android:id="@+id/kind_of_food"
+        android:textSize="16sp"
+        android:layout_alignLeft="@+id/saveButton"
+        android:layout_marginTop="80dp"
+        android:layout_marginLeft="5dp" />
+
+    <AutoCompleteTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/kind"
+        android:layout_below="@+id/kind_of_food"
+        android:layout_alignLeft="@+id/kind_of_food"
+        android:layout_alignRight="@+id/saveButton"
+        android:completionThreshold="1"
+        android:textSize="16sp"
+        android:layout_marginRight="5dp">
+        <requestFocus />
+    </AutoCompleteTextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Count (g)"
+        android:id="@+id/count_of_food"
+        android:textSize="16sp"
+        android:layout_below="@+id/kind"
+        android:layout_alignLeft="@+id/kind" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/count"
+        android:layout_below="@+id/count_of_food"
+        android:layout_alignLeft="@+id/count_of_food"
+        android:textSize="16sp"
+        android:layout_alignRight="@+id/count_of_food" />
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/button_green"
+        android:text="Save"
+        android:textColor="@color/white"
+        android:id="@+id/saveButton"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+
+        android:layout_alignParentRight="true"
+        android:layout_alignParentLeft="true"
+        android:layout_margin="16dp" />
+
+    <Button
+        android:layout_width="110dp"
+        android:layout_height="30dp"
+        android:background="@drawable/button_green"
+        android:id="@+id/addButton"
+        android:text="Add"
+        android:textColor="@color/white"
+        android:layout_above="@+id/list_of_product"
+        android:layout_alignRight="@+id/list_of_product"
+
+        android:layout_below="@+id/count_of_food" />
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/list_of_product"
+        android:layout_alignLeft="@+id/count"
+        android:layout_below="@+id/count"
+        android:layout_alignRight="@+id/saveButton"
+        android:layout_above="@+id/saveButton" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="time"
+        android:ems="10"
+        android:id="@+id/editText4"
+        android:layout_alignTop="@+id/addButton"
+        android:layout_toRightOf="@+id/count"
+        android:layout_marginLeft="15dp"
+        android:layout_toLeftOf="@+id/addButton"
+        android:layout_marginRight="35dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Time"
+        android:id="@+id/textView4"
+        android:layout_above="@+id/editText4"
+        android:layout_alignLeft="@+id/editText4"
+        android:textSize="16sp"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </RelativeLayout>

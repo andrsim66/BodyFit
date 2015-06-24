@@ -105,14 +105,14 @@ public class StatusActivity extends ActionBarActivity implements View.OnClickLis
                         }
                     }
                 });
-
+//
 //                Date dt = new Date();
 //                Calendar c = Calendar.getInstance();
 //                c.setTime(dt);
 //                c.add(Calendar.DATE, 1);
 //                dt = c.getTime();
 //                Logger.d("dt="+dt);
-
+//
                 Intent intent = new Intent(StatusActivity.this, DayScheduleActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                 intent.putExtra("category", Utils.getProgramCategory(person.getFatPercent(), person.getGender()));

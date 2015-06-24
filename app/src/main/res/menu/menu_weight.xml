@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="rootviii.bodyfit.app.activities.WeightActivity">
+    <item
+        android:id="@+id/action_statistics"
+        android:title="Statistics"
+        android:orderInCategory="100"
+        app:showAsAction="never"/>
+    <item android:id="@+id/action_question"
+        android:title="Question"
+        android:orderInCategory="5"
+        />
+    <item android:id="@+id/action_weight"
+        android:title="Weight"
+        android:orderInCategory="3"/>
+</menu>

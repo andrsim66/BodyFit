@@ -17,12 +17,16 @@
     <string name="waterPers">Water percentage</string>
     <string name="start">Start</string>
     <string name="title_activity_day_schedule">Day Schedule</string>
-    <string name="title_activity_food">FoodActivity</string>
+    <string name="title_activity_food">Meal</string>
     <string name="title_activity_statistics">Statistics</string>
     <string name="hello_world">Hello world!</string>
     <string name="calories">Calories</string>
     <string name="caloriesTab">Calories</string>
     <string name="weightTab">Weight</string>
     <string name="waterTab">Water</string>
+    <string name="title_activity_question">Question</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_activity_weight">Weight</string>
+    <string name="title_activity_first">FirstActivity</string>
 
 </resources>
